@@ -1,10 +1,11 @@
 
 import smtplib
 import socket
+from config import DESTINATION_HOST, DESTINATION_PORT
 
 def verifica_conexiunea():
     try:
-        with smtplib.SMTP("127.0.0.1", 1025, timeout=5) as server:
+        with smtplib.SMTP(DESTINATION_HOST, DESTINATION_PORT, timeout=5) as server:
             cod, mesaj = server.noop()
 
             if cod == 250:
