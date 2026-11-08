@@ -1,0 +1,8 @@
+From: eu@test.local
+To: test@bebe.com
+Subject: Bebe test mail
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Aici am trimis mail-ul :)

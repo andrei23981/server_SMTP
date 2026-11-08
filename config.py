@@ -1,0 +1,7 @@
+EMAIL = "eu@test.local"
+
+SERVER_HOST = "127.0.0.1"
+SERVER_PORT = 1025
+
+DESTINATION_HOST = "localhost"
+DESTINATION_PORT = 1025
