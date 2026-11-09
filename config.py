@@ -1,7 +1,7 @@
-EMAIL = "eu@test.local"
+EMAIL = "andrei@test.local"
 
-SERVER_HOST = "127.0.0.1"
+SERVER_HOST = ""
 SERVER_PORT = 1025
 
-DESTINATION_HOST = "localhost"
+DESTINATION_HOST = ""
 DESTINATION_PORT = 1025
