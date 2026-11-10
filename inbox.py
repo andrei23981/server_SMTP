@@ -26,8 +26,11 @@ def citeste_emailuri():
     mesaje = []
 
     for index, fisier in enumerate(emailuri, start=1):
+        continut_fisier = fisier.read_bytes()
+        # Mesajele salvate anterior cu write_text pe Windows au CR dublu.
+        continut_fisier = continut_fisier.replace(b"\r\r\n", b"\r\n")
         mesaj = BytesParser(policy=policy.default).parsebytes(
-            fisier.read_bytes()
+            continut_fisier
         )
         mesaje.append(mesaj)
 

@@ -6,12 +6,12 @@ from config import EMAIL, SERVER_HOST, SERVER_PORT
 class EmailHandler:
     async def handle_DATA(self, server, session, envelope):
         print("Am primit un email")
-        mesaj = envelope.content.decode('utf8', errors='replace')
         folder = Path("inbox")
         folder.mkdir(exist_ok=True)
         nume = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
         fisier = folder / f"{nume}.txt"
-        fisier.write_text(mesaj, encoding='utf8')
+        # Pastram octetii SMTP originali: write_text ar dubla CR pe Windows.
+        fisier.write_bytes(envelope.content)
         print(f"Email salvat in fisierul: {fisier}")
         return "250 OK"
 
